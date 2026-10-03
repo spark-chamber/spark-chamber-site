@@ -39,7 +39,7 @@
 <section class="page-intro stack gap-14">
 <p class="eyebrow">PRIVACY · LAST UPDATED OCTOBER 3, 2026</p>
 <h1 class="display-sm">Your progress stays on your device</h1>
-<p class="lead lead-wide">The Spark Chamber app collects nothing. It has no account, makes no network requests, and contains no analytics, advertising, or tracking.</p>
+<p class="lead lead-wide">The Spark Chamber app collects nothing. It has no account, makes no network requests of its own, and contains no analytics, advertising, or tracking.</p>
 </section>
 
 <div class="page-body">
@@ -47,7 +47,7 @@
 
 <section>
 <h2 class="title-md">What stays on your device</h2>
-<p class="text">Your progress, settings, and any problem reports you save stay in the app's own storage on your device. Nothing is uploaded, and no copy exists anywhere else.</p>
+<p class="text">Your progress, settings, and any problem reports you save stay in the app's own storage on your device. The app never uploads them. What you can choose to share is described below.</p>
 <ul class="list">
 <li>In the Snap version, it's in <code>~/snap/spark-chamber/common/</code>, a folder that every update shares, so updates can't erase it.</li>
 <li>The app also keeps automatic backups of recent saves in the same folder.</li>
@@ -58,7 +58,8 @@
 
 <section>
 <h2 class="title-md">What leaves your device</h2>
-<p class="text">Only what you choose to share leaves your device. The browser version loads only its own files from app.sparkchamber.app, and nothing from any other site. Export progress… (in Settings) writes your progress to a file you pick, and Report a problem copies text to your clipboard. Each goes only where you save or paste it. The app itself never sends anything.</p>
+<p class="text">Only what you choose to share leaves your device, and the app itself never sends anything. The browser version loads only its own files from app.sparkchamber.app, and nothing from any other site. Export progress… (in Settings) writes your progress to a file you pick, and Copy progress backup copies it to your clipboard. Each goes only where you save or paste it.</p>
+<p class="text">Report a problem saves the report on your device and copies it to your clipboard. From version 0.4.1, it also opens the <a href="feedback.html">feedback form</a> in your browser with the report filled in: your comment, the topic, problem, and seed, your answer, the expected answer, and the app version. The report travels in the form's web address, so this site's host, GitHub Pages, receives it when the page opens and may record it in its logs. The report is filed only when you press Send. If you close the tab instead, nothing is filed.</p>
 </section>
 
 <section>
@@ -94,7 +95,7 @@
 
 <footer class="site-footer">
 <div class="footer-inner">
-<span>Spark Chamber · Early Access 0.3.0</span>
+<span>Spark Chamber · Early Access 0.4.0</span>
 <div class="footer-links">
 <a href="index.html">Home</a>
 <a href="download.html">Download</a>

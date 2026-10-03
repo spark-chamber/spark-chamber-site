@@ -24,7 +24,7 @@ The site's copy was checked against `spark-chamber/electronics-app` at release 0
 
 ## Keep in step with the app
 
-- Version and date in every footer, the download header and the release notes (now 0.3.0, October 2, 2026). Release notes come from the app's `docs/release-notes/`.
+- Version and date in every footer, the download header and the release notes (now 0.4.0, October 3, 2026). Release notes come from the app's `docs/release-notes/`.
 - Home page facts taken from the app: 50 topics; five right in a row to light a topic; reviews after 1, 3, 7, 14 and 30 days; two misses in review lose mastery; 23 design problems; worst-case and datasheet problems in Real components. The two example cards in "Real work" are real problems from the app (`div_design_pair` and `real_worst_divider`).
 - Credits lists the only two works the app's topics cite (Kuphaldt's *Lessons in Electric Circuits* and *ModEL*). Add a row if a topic cites a new CC BY source.
 - The Privacy page mirrors the app's About page and `docs/PRIVACY.md`. If the planned design assistant (app backlog U14, the user's own LLM) ships, "makes no network requests" must change.

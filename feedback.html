@@ -77,7 +77,7 @@
 <div class="field"><label for="seed">Seed</label><input type="text" id="seed" name="seed" maxlength="200" autocomplete="off" placeholder="9"></div>
 <div class="field"><label for="answer">Your answer</label><input type="text" id="answer" name="answer" maxlength="200" autocomplete="off" placeholder="3.0 V"></div>
 <div class="field"><label for="expected">Expected answer</label><input type="text" id="expected" name="expected" maxlength="200" autocomplete="off" placeholder="3.3 V"></div>
-<div class="field"><label for="version">App version</label><input type="text" id="version" name="version" maxlength="200" autocomplete="off" placeholder="0.3.0"></div>
+<div class="field"><label for="version">App version</label><input type="text" id="version" name="version" maxlength="200" autocomplete="off" placeholder="0.4.0"></div>
 </div>
 </details>
 
@@ -117,13 +117,17 @@
 // and explain why when the receiver sends someone back.
 (function () {
   var form = document.getElementById('feedback-form');
+  // The app's link carries the report in the query; it may move to the
+  // fragment (after #), which browsers never send to the host. Read both,
+  // query first.
   var params = new URLSearchParams(location.search);
+  var hashParams = new URLSearchParams(location.hash.slice(1));
   var fields = ['kind', 'message', 'topic', 'problem', 'seed', 'answer', 'expected', 'version', 'email'];
   var draft = {};
   try { draft = JSON.parse(sessionStorage.getItem('feedback-draft') || '{}'); } catch (e) {}
   var filled = false;
   fields.forEach(function (name) {
-    var value = params.get(name) || draft[name];
+    var value = params.get(name) || hashParams.get(name) || draft[name];
     if (!value || !form.elements[name]) return;
     if (name === 'kind' && !form.querySelector('input[name="kind"][value="' + CSS.escape(value) + '"]')) return;
     form.elements[name].value = value.slice(0, 5000);
@@ -156,7 +160,7 @@
 
 <footer class="site-footer">
 <div class="footer-inner">
-<span>Spark Chamber · Early Access 0.3.0</span>
+<span>Spark Chamber · Early Access 0.4.0</span>
 <div class="footer-links">
 <a href="index.html">Home</a>
 <a href="download.html">Download</a>
