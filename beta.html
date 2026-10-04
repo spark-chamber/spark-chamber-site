@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Beta · Spark Chamber</title>
-<meta name="description" content="Closed beta of Spark Chamber 0.5: how to start, what to try first, how to report problems, and the survey.">
+<meta name="description" content="Help test Spark Chamber 0.5: how to start, what to try, how to report problems, and the survey.">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Spark Chamber">
 <meta property="og:title" content="Beta · Spark Chamber">
-<meta property="og:description" content="Closed beta of Spark Chamber 0.5: how to start, what to try first, how to report problems, and the survey.">
+<meta property="og:description" content="Help test Spark Chamber 0.5: how to start, what to try, how to report problems, and the survey.">
 <meta property="og:url" content="https://sparkchamber.app/beta">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
@@ -37,12 +37,12 @@
 
 <main id="main">
 
-<!-- Bracketed text is a placeholder until the final wording arrives (see TODO.md). -->
+<!-- [START] and [END] are filled in on release day. -->
 
 <section class="page-intro stack gap-14">
-<p class="eyebrow">CLOSED BETA · 0.5 · [START DATE] TO [END DATE]</p>
-<h1 class="display-sm">Spark Chamber 0.5 beta</h1>
-<p class="lead lead-wide">[WHAT IT IS: two sentences. Spark Chamber teaches circuits and electronics through real problems and measurements on a virtual lab bench. This beta tests version 0.5 before it reaches everyone.]</p>
+<p class="eyebrow">CLOSED BETA · 0.5 · [START] TO [END]</p>
+<h1 class="display-sm">Help test Spark Chamber 0.5</h1>
+<p class="lead lead-wide">Spark Chamber is an electronics course for your computer: circuits, the physics behind them, a circuit simulator, and problems that ask why, not only what. This beta checks that it teaches well before a wider launch.</p>
 </section>
 
 <div class="page-body">
@@ -50,39 +50,43 @@
 
 <section id="dates">
 <h2 class="title-md">Dates</h2>
-<p class="text">[The beta runs from START DATE to END DATE. The survey closes on END DATE.]</p>
+<p class="text">The beta runs from [START] to [END]. The survey closes [END].</p>
 </section>
 
 <section id="start">
 <h2 class="title-md">Start</h2>
 <ul class="list">
-<li><strong>Browser</strong> (Windows, Chromebook, Linux): open <a href="https://app.sparkchamber.app">app.sparkchamber.app</a>. Nothing to install.</li>
-<li><strong>Mac:</strong> use the browser version for now.</li>
-<li><strong>Linux:</strong> install the Snap:</li>
+<li><strong>Browser</strong> (any computer, including a Mac): <a href="https://app.sparkchamber.app">app.sparkchamber.app</a>. Your progress stays in that browser; Settings → Export progress saves a backup.</li>
+<li><strong>Linux:</strong> <code>sudo snap install spark-chamber</code></li>
+<li><strong>Mac app:</strong> coming to the Mac App Store. Use the browser version for now.</li>
 </ul>
-<pre class="code">sudo snap install spark-chamber</pre>
-<p class="fine">[If the beta build is on a different Snap channel, the command changes, for example --beta.]</p>
 </section>
 
-<section id="first">
-<h2 class="title-md">What to try first</h2>
-<p class="text">[The center ring: the eight basics. What to look for there.]</p>
+<section id="try">
+<h2 class="title-md">What to try</h2>
+<p class="fine">About 2–3 hours over two weeks.</p>
+<ol class="list">
+<li><strong>Light the center ring.</strong> Open Theory (M) and work through the eight basics: charge and current, voltage and energy, resistance and Ohm's law, power and heat, sources, capacitors, inductors, and real components. Already know them? Take the placement and go further.</li>
+<li><strong>Use the tools on something real,</strong> ideally something you're studying or building: the Simulator (C), the Calculator, and Terminology (G).</li>
+<li><strong>Report what's wrong.</strong> Use Report a problem in the app for a wrong answer, a confusing problem or a broken screen, one report per problem.</li>
+<li><strong>Take the survey around day 10.</strong> It's six questions and takes about five minutes.</li>
+</ol>
 </section>
 
 <section id="report">
 <h2 class="title-md">Report a problem</h2>
-<p class="text">[Use Report a problem in the app: it fills in the topic, problem, and seed, so the exact problem can be reopened. Or use the <a href="feedback.html">feedback page</a>.]</p>
+<p class="text">The button in the app fills in the problem's details for you; or use the <a href="feedback.html">feedback page</a>.</p>
 </section>
 
 <section id="survey">
 <h2 class="title-md">Survey</h2>
-<p class="text">[At the end of the beta, answer a short survey: six questions, no account, no email.]</p>
 <div class="btn-row"><a href="survey.html" class="btn">Take the survey</a></div>
 </section>
 
 <section id="collected">
 <h2 class="title-md">What's collected</h2>
-<p class="text">[Nothing automatically. Only what you send through Report a problem, the feedback page, or the survey, and none of it asks for your name or email address. See the <a href="privacy.html">Privacy page</a>.]</p>
+<p class="text">The app collects nothing and sends nothing on its own. You send only what you choose: problem reports and survey answers, which go to a private repository. There's no account and no email address. See <a href="privacy.html">Privacy</a>.</p>
+<p class="text">Free during Early Access. Progress you make in the beta carries over to later versions.</p>
 </section>
 
 </div>

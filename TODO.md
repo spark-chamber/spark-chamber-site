@@ -12,7 +12,7 @@ The site's copy was checked against `spark-chamber/electronics-app` at release 0
 
 ## Beta page (`beta.html`, served at `/beta`)
 
-- Structure only, for the closed beta after 0.5. Bracketed text is a placeholder until the final wording arrives.
+- For the closed beta after 0.5. `[START]` and `[END]` are filled in on release day; the rest of the wording is final, pending the owner's OK.
 - Not linked from the nav, and marked `noindex` so search engines skip it.
 - "Take the survey" links to `survey.html`, which posts to the feedback Worker as `form=survey`. Before the survey goes out, the owner redeploys the Worker and creates the `beta-survey` label (`feedback-worker/README.md`, "Updating the Worker"), then sends one test survey.
 - Goes live only when 0.5 ships and the owner approves the page.
