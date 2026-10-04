@@ -1,6 +1,7 @@
 // Receives the feedback form and the beta survey (form=survey) on
 // sparkchamber.app and files each as an issue in the private feedback
-// repository. Nothing else is stored: no IP address, no cookies. Secrets: TURNSTILE_SECRET, GITHUB_TOKEN.
+// repository. Nothing else is stored: no IP address, no cookies.
+// Secrets: TURNSTILE_SECRET, GITHUB_TOKEN.
 // Vars: SITE_URL, GITHUB_REPO (owner/name); optional FETCH_TIMEOUT_MS.
 
 export const KINDS = {
