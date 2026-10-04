@@ -360,3 +360,13 @@ test('a feedback kind named after an object property is rejected', async () => {
   }
   assert.equal(calls.length, 0);
 });
+
+test('the survey files question 6 (class or textbook) after question 5, within the same limit', async () => {
+  const res = await post({ ...survey, share: 'Yes', helped: 'Why a capacitor blocks DC' });
+  assert.equal(res.headers.get('location'), 'https://sparkchamber.app/survey-sent.html');
+  const { body } = JSON.parse(githubCalls()[0].init.body);
+  assert.match(body, /\*\*Did it help you understand something your class or textbook didn't\? What\?\*\*\n\n> Why a capacitor blocks DC/);
+  assert.ok(body.indexOf('show it to a friend') < body.indexOf('class or textbook'));
+  const long = await post({ ...survey, helped: 'x'.repeat(2001) });
+  assert.equal(long.headers.get('location'), 'https://sparkchamber.app/survey.html?status=invalid');
+});

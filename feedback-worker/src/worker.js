@@ -50,6 +50,7 @@ export const SURVEY_TEXT = {
   confused: 'What confused you or felt wrong?',
   change: 'What would change your mind about buying?',
   share: 'Would you show it to a friend or classmate? Why or why not?',
+  helped: "Did it help you understand something your class or textbook didn't? What?",
 };
 
 // How long to wait for Turnstile, and for GitHub, before giving up. Without a

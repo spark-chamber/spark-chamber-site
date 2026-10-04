@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Beta survey · Spark Chamber</title>
-<meta name="description" content="Closed beta survey for Spark Chamber 0.5: six short questions. No account or email.">
+<meta name="description" content="Closed beta survey for Spark Chamber 0.5: seven short questions. No account or email.">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Spark Chamber">
 <meta property="og:title" content="Beta survey · Spark Chamber">
-<meta property="og:description" content="Closed beta survey for Spark Chamber 0.5: six short questions. No account or email.">
+<meta property="og:description" content="Closed beta survey for Spark Chamber 0.5: seven short questions. No account or email.">
 <meta property="og:url" content="https://sparkchamber.app/survey.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
@@ -40,7 +40,7 @@
 <section class="page-intro stack gap-14">
 <p class="eyebrow">BETA SURVEY · 0.5</p>
 <h1 class="display-sm">How did the beta go?</h1>
-<p class="lead lead-wide">Six short questions. Only the first and the fourth are required. You don't need an account, and nothing asks for your name or email address.</p>
+<p class="lead lead-wide">Seven short questions. Only the first and the fourth are required. You don't need an account, and nothing asks for your name or email address.</p>
 </section>
 
 <div class="page-body">
@@ -92,8 +92,13 @@
 <textarea id="share" name="share" rows="4" maxlength="2000"></textarea>
 </div>
 
+<div class="field">
+<label for="helped">6. Did it help you understand something your class or textbook didn't? What?</label>
+<textarea id="helped" name="helped" rows="4" maxlength="2000"></textarea>
+</div>
+
 <fieldset class="kind-group">
-<legend>6. Optional: you are</legend>
+<legend>7. Optional: you are</legend>
 <div class="kind-grid">
 <label class="kind-tile"><input type="radio" name="role" value="" checked><span class="kind-name">Prefer not to say</span></label>
 <label class="kind-tile"><input type="radio" name="role" value="student"><span class="kind-name">Student</span></label>
@@ -134,7 +139,7 @@
   var form = document.getElementById('survey-form');
   var params = new URLSearchParams(location.search);
   var radios = ['reach', 'buy', 'role'];
-  var texts = ['stopped', 'confused', 'change', 'share'];
+  var texts = ['stopped', 'confused', 'change', 'share', 'helped'];
   var draft = {};
   try { draft = JSON.parse(sessionStorage.getItem('survey-draft') || '{}'); } catch (e) {}
   radios.forEach(function (name) {
