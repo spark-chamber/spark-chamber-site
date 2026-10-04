@@ -10,6 +10,13 @@ The site's copy was checked against `spark-chamber/electronics-app` at release 0
 | Support Spark Chamber | `index.html` 260 | `https://ko-fi.com/sparkchamber` | *Done 2026-10-04:* linked (tips only; founder pack and supporter tiers are on hold) |
 | Support (nav and footer) | `download.html` 33, 131 | `https://ko-fi.com/sparkchamber` | *Done 2026-10-04:* linked |
 
+## Beta page (`beta.html`, served at `/beta`)
+
+- Structure only, for the closed beta after 0.5. Bracketed text is a placeholder until the final wording arrives.
+- Not linked from the nav, and marked `noindex` so search engines skip it.
+- "Take the survey" links to `survey.html`, which doesn't exist yet. The survey (a new form type in the Worker, the form page, and one line on the privacy page) waits on the owner's go.
+- Goes live only when 0.5 ships and the owner approves the page.
+
 ## Feedback form
 
 - The form posts to the Worker at `https://spark-chamber-feedback.sparkchamber.workers.dev` (Turnstile site key `0x4AAAAAAFLqcBtSJG9R3Zq2`). The GitHub token in the Worker expires after a year; renew it as described in `feedback-worker/README.md`.
