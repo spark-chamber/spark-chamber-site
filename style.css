@@ -498,3 +498,23 @@ h1, h2 { overflow-wrap: break-word; hyphens: auto; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
 .footer-links a { color: var(--text-2); transition: color 0.15s ease; }
 .footer-links a:hover { color: var(--text); }
+
+/* App screenshots: crisp 2x captures, full column width, never cropped (TODO.md, owner 2026-10-03). */
+.shots { display: grid; gap: 32px; }
+.shot { margin: 0; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+.shot figcaption { font-size: 14px; line-height: 1.5; color: var(--muted); }
+/* Side by side from 900 px, with column widths in proportion to each image's
+   aspect ratio so both images in a row end at the same height. */
+@media (min-width: 900px) {
+  .shots-tree { grid-template-columns: 1.32fr 1.855fr; }
+  .shots-reading { grid-template-columns: 1.267fr 0.631fr; }
+}

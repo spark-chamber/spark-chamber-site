@@ -273,3 +273,100 @@ test('a cached failing /health is reused too, then rechecked after 5 minutes', a
   assert.equal((await getHealth()).status, 200);
   assert.equal(calls.length, 2);
 });
+
+// The beta survey (form=survey).
+const survey = {
+  form: 'survey',
+  reach: 'circuits',
+  buy: 'maybe',
+  stopped: 'Mesh analysis, ran out of time',
+  'cf-turnstile-response': 'tok',
+};
+
+test('files a survey with the beta-survey label and redirects to its thank-you page', async () => {
+  const res = await post({ ...survey, role: 'student', change: 'A student price' });
+  assert.equal(res.status, 303);
+  assert.equal(res.headers.get('location'), 'https://sparkchamber.app/survey-sent.html');
+  const [gh] = githubCalls();
+  assert.equal(gh.url, 'https://api.github.com/repos/spark-chamber/spark-chamber-feedback/issues');
+  const issue = JSON.parse(gh.init.body);
+  assert.equal(issue.title, 'Beta survey: Into Circuits · would buy: Maybe');
+  assert.deepEqual(issue.labels, ['beta-survey', 'from:web']);
+  assert.match(issue.body, /\| How far did you get\? \| Into Circuits \|/);
+  assert.match(issue.body, /\| You are \| Student \|/);
+  assert.match(issue.body, /\*\*Where did you stop, and why\?\*\*\n\n> Mesh analysis, ran out of time/);
+  assert.match(issue.body, /> A student price/);
+});
+
+test('a survey without the optional role or text answers is still filed', async () => {
+  const res = await post({ form: 'survey', reach: 'few', buy: 'no', 'cf-turnstile-response': 'tok' });
+  assert.equal(res.headers.get('location'), 'https://sparkchamber.app/survey-sent.html');
+  const issue = JSON.parse(githubCalls()[0].init.body);
+  assert.doesNotMatch(issue.body, /You are/);
+  assert.doesNotMatch(issue.body, /Where did you stop/);
+});
+
+test('rejects a survey with a missing or unknown choice, or an overlong answer', async () => {
+  const bad = [
+    { ...survey, reach: '' },
+    { ...survey, buy: '' },
+    { ...survey, reach: 'everything' },
+    { ...survey, buy: 'constructor' },
+    { ...survey, role: 'toString' },
+    { ...survey, confused: 'x'.repeat(2001) },
+  ];
+  for (const fields of bad) {
+    const res = await post(fields);
+    assert.equal(res.headers.get('location'), 'https://sparkchamber.app/survey.html?status=invalid');
+  }
+  assert.equal(calls.length, 0);
+});
+
+test('a survey answer at the 2,000-character limit is accepted', async () => {
+  const res = await post({ ...survey, confused: 'x'.repeat(2000) });
+  assert.equal(res.headers.get('location'), 'https://sparkchamber.app/survey-sent.html');
+});
+
+test('a survey that fails the human check goes back to the survey', async () => {
+  turnstileOk = false;
+  const res = await post(survey);
+  assert.equal(res.headers.get('location'), 'https://sparkchamber.app/survey.html?status=check');
+  assert.equal(githubCalls().length, 0);
+});
+
+test('a survey GitHub fails to save goes back to the survey with an error', async () => {
+  githubStatus = [500];
+  const res = await post(survey);
+  assert.equal(res.headers.get('location'), 'https://sparkchamber.app/survey.html?status=error');
+});
+
+test('a bot-filled survey is dropped and lands on the survey thank-you page', async () => {
+  const res = await post({ ...survey, website: 'http://spam.example' });
+  assert.equal(res.headers.get('location'), 'https://sparkchamber.app/survey-sent.html');
+  assert.equal(calls.length, 0);
+});
+
+test('survey text cannot ping people or reference issues, and a posted email is ignored', async () => {
+  await post({ ...survey, share: 'Ask @octocat about #12', email: 'someone@example.com' });
+  const issue = JSON.parse(githubCalls()[0].init.body);
+  assert.doesNotMatch(issue.body, /@octocat|#12/);
+  assert.doesNotMatch(issue.body, /someone/);
+});
+
+test('a feedback kind named after an object property is rejected', async () => {
+  for (const kind of ['constructor', 'toString', '__proto__']) {
+    const res = await post({ ...valid, kind });
+    assert.equal(res.headers.get('location'), 'https://sparkchamber.app/feedback.html?status=invalid');
+  }
+  assert.equal(calls.length, 0);
+});
+
+test('the survey files question 6 (class or textbook) after question 5, within the same limit', async () => {
+  const res = await post({ ...survey, share: 'Yes', helped: 'Why a capacitor blocks DC' });
+  assert.equal(res.headers.get('location'), 'https://sparkchamber.app/survey-sent.html');
+  const { body } = JSON.parse(githubCalls()[0].init.body);
+  assert.match(body, /\*\*Did it help you understand something your class or textbook didn't\? What\?\*\*\n\n> Why a capacitor blocks DC/);
+  assert.ok(body.indexOf('show it to a friend') < body.indexOf('class or textbook'));
+  const long = await post({ ...survey, helped: 'x'.repeat(2001) });
+  assert.equal(long.headers.get('location'), 'https://sparkchamber.app/survey.html?status=invalid');
+});

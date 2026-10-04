@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Beta survey · Spark Chamber</title>
+<meta name="description" content="Closed beta survey for Spark Chamber 0.5: seven short questions. No account or email.">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spark Chamber">
+<meta property="og:title" content="Beta survey · Spark Chamber">
+<meta property="og:description" content="Closed beta survey for Spark Chamber 0.5: seven short questions. No account or email.">
+<meta property="og:url" content="https://sparkchamber.app/survey.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="style.css?v=0.5.0-1">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+<nav aria-label="Main" class="nav">
+<a href="index.html" class="brand">
+<svg width="28" height="28" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M37.1 38.1L42.9 45M24.5 29.3L15.1 25.8" stroke="#5A605A" stroke-width="3.5" stroke-linecap="round"/><circle cx="43.2" cy="45.4" r="3.4" fill="#0D0F0E" stroke="#5A605A" stroke-width="2.5"/><circle cx="14.6" cy="25.7" r="3.4" fill="#0D0F0E" stroke="#5A605A" stroke-width="2.5"/><circle cx="32" cy="32" r="11" stroke="#E8A33D" stroke-width="2" opacity="0.4"/><path d="M32 24V10M39.5 29.3L50.8 25.2M27.1 38.3L19.1 48.5" stroke="#E8A33D" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="32" r="6.5" fill="#E8A33D"/><circle cx="32" cy="9.5" r="4.2" fill="#E8A33D"/><circle cx="51.3" cy="25" r="4.2" fill="#E8A33D"/><circle cx="18.8" cy="48.9" r="4.2" fill="#E8A33D"/></svg>
+<span class="brand-name">Spark Chamber</span>
+<span class="badge">EARLY ACCESS</span>
+</a>
+<div class="nav-links">
+<a href="index.html" class="nav-link">Home</a>
+<a href="download.html" class="btn btn-sm">Download</a>
+</div>
+</nav>
+</header>
+
+<main id="main">
+
+<section class="page-intro stack gap-14">
+<p class="eyebrow">BETA SURVEY · 0.5</p>
+<h1 class="display-sm">How did the beta go?</h1>
+<p class="lead lead-wide">Seven short questions. Only the first and the fourth are required. You don't need an account, and nothing asks for your name or email address.</p>
+</section>
+
+<div class="page-body">
+<div class="feedback-layout">
+
+<form class="feedback-card" id="survey-form" method="post" action="https://spark-chamber-feedback.sparkchamber.workers.dev">
+<input type="hidden" name="form" value="survey">
+
+<p class="notice" id="form-status" role="alert" hidden></p>
+
+<fieldset class="kind-group">
+<legend>1. How far did you get?</legend>
+<div class="kind-grid">
+<label class="kind-tile"><input type="radio" name="reach" value="few" required><span class="kind-name">A few topics</span></label>
+<label class="kind-tile"><input type="radio" name="reach" value="ring"><span class="kind-name">The center ring</span><span class="kind-desc">The eight basics</span></label>
+<label class="kind-tile"><input type="radio" name="reach" value="circuits"><span class="kind-name">Into Circuits</span></label>
+<label class="kind-tile"><input type="radio" name="reach" value="electronics"><span class="kind-name">Into Electronics</span></label>
+</div>
+</fieldset>
+
+<div class="field">
+<label for="stopped">2. Where did you stop, and why?</label>
+<textarea id="stopped" name="stopped" rows="4" maxlength="2000"></textarea>
+</div>
+
+<div class="field">
+<label for="confused">3. What confused you or felt wrong?</label>
+<textarea id="confused" name="confused" rows="4" maxlength="2000" aria-describedby="confused-hint"></textarea>
+<p class="hint" id="confused-hint">A topic, a problem, a drawing, or a tool. Say what you expected.</p>
+</div>
+
+<fieldset class="kind-group">
+<legend>4. The full course will be a one-time price of about $35. Would you buy it?</legend>
+<div class="kind-grid">
+<label class="kind-tile"><input type="radio" name="buy" value="yes" required><span class="kind-name">Yes</span></label>
+<label class="kind-tile"><input type="radio" name="buy" value="maybe"><span class="kind-name">Maybe</span></label>
+<label class="kind-tile"><input type="radio" name="buy" value="no"><span class="kind-name">No</span></label>
+</div>
+</fieldset>
+
+<div class="field">
+<label for="change">What would change your mind?</label>
+<textarea id="change" name="change" rows="4" maxlength="2000" aria-describedby="change-hint"></textarea>
+<p class="hint" id="change-hint">Optional.</p>
+</div>
+
+<div class="field">
+<label for="share">5. Would you show it to a friend or classmate? Why or why not?</label>
+<textarea id="share" name="share" rows="4" maxlength="2000"></textarea>
+</div>
+
+<div class="field">
+<label for="helped">6. Did it help you understand something your class or textbook didn't? What?</label>
+<textarea id="helped" name="helped" rows="4" maxlength="2000"></textarea>
+</div>
+
+<fieldset class="kind-group">
+<legend>7. Optional: you are</legend>
+<div class="kind-grid">
+<label class="kind-tile"><input type="radio" name="role" value="" checked><span class="kind-name">Prefer not to say</span></label>
+<label class="kind-tile"><input type="radio" name="role" value="student"><span class="kind-name">Student</span></label>
+<label class="kind-tile"><input type="radio" name="role" value="hobbyist"><span class="kind-name">Hobbyist</span></label>
+<label class="kind-tile"><input type="radio" name="role" value="engineer"><span class="kind-name">Working engineer</span></label>
+<label class="kind-tile"><input type="radio" name="role" value="other"><span class="kind-name">Other</span></label>
+</div>
+</fieldset>
+
+<div class="trap" aria-hidden="true">
+<label for="website">Leave this field empty</label>
+<input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+</div>
+
+<div class="form-footer">
+<div class="cf-turnstile" data-sitekey="0x4AAAAAAFLqcBtSJG9R3Zq2" data-theme="dark"></div>
+<button type="submit" class="btn">Send answers</button>
+</div>
+
+</form>
+
+<aside class="feedback-aside">
+<h2 class="aside-title">Where your answers go</h2>
+<ol class="steps">
+<li><strong>They're filed privately.</strong> Only the Spark Chamber team can read them.</li>
+<li><strong>They're anonymous.</strong> Nothing links them to you or to your problem reports.</li>
+<li><strong>They shape the next versions.</strong> Bugs and confusing problems you find go through <a href="feedback.html">Report a problem</a> instead, so they can be reopened exactly.</li>
+</ol>
+<p class="fine">We store your answers, but not your IP address. A Cloudflare check guards the form against spam. See the <a href="privacy.html">Privacy page</a>.</p>
+</aside>
+
+</div>
+</div>
+
+<script>
+// Keep a draft if sending fails, and explain why when the receiver sends someone back.
+(function () {
+  var form = document.getElementById('survey-form');
+  var params = new URLSearchParams(location.search);
+  var radios = ['reach', 'buy', 'role'];
+  var texts = ['stopped', 'confused', 'change', 'share', 'helped'];
+  var draft = {};
+  try { draft = JSON.parse(sessionStorage.getItem('survey-draft') || '{}'); } catch (e) {}
+  radios.forEach(function (name) {
+    var value = draft[name];
+    if (typeof value !== 'string') return;
+    var input = form.querySelector('input[name="' + name + '"][value="' + CSS.escape(value) + '"]');
+    if (input) input.checked = true;
+  });
+  texts.forEach(function (name) {
+    if (typeof draft[name] === 'string') form.elements[name].value = draft[name].slice(0, 2000);
+  });
+
+  var messages = {
+    invalid: 'Something in the form was missing or too long. Answer questions 1 and 4, then send it again.',
+    check: "The spam check didn't finish. Wait for it to show a check mark, then send again.",
+    error: "Your answers couldn't be saved just now. They're still here, so try again in a few minutes."
+  };
+  var status = params.get('status');
+  if (messages[status]) {
+    var box = document.getElementById('form-status');
+    box.textContent = messages[status];
+    box.hidden = false;
+  }
+
+  form.addEventListener('submit', function () {
+    var data = {};
+    radios.forEach(function (name) {
+      var checked = form.querySelector('input[name="' + name + '"]:checked');
+      if (checked) data[name] = checked.value;
+    });
+    texts.forEach(function (name) { data[name] = form.elements[name].value; });
+    try { sessionStorage.setItem('survey-draft', JSON.stringify(data)); } catch (e) {}
+  });
+})();
+</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+</main>
+
+<footer class="site-footer">
+<div class="footer-inner">
+<span>Spark Chamber · Early Access 0.5.0</span>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="download.html">Download</a>
+<a href="privacy.html">Privacy</a>
+<a href="credits.html">Credits</a>
+<a href="safety.html">Safety</a>
+<a href="feedback.html">Report a problem</a>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
