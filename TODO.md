@@ -12,8 +12,8 @@ The site's copy was checked against `spark-chamber/electronics-app` at release 0
 
 ## Beta page (`beta.html`, served at `/beta`)
 
-- For the closed beta of 0.5: October 4 to December 6, 2026 (owner, 2026-10-04); the survey closes the same day.
-- Not linked from the nav, and marked `noindex` so search engines skip it.
+- For the beta of 0.5: October 4 to December 6, 2026 (owner, 2026-10-04); the survey closes the same day. Open to anyone since 2026-10-04 (owner).
+- Not in the nav. A quiet "Join the beta" line links to it from the home page (under the download buttons) and the download page (under the intro). Indexed; `survey.html` and `survey-sent.html` stay `noindex` and are reached from the beta page only.
 - "Take the survey" links to `survey.html`, which posts to the feedback Worker as `form=survey`. *Done 2026-10-04:* the owner created the `beta-survey` label, redeployed the Worker from commit 121a081, and sent a test survey (feedback issue #5, labeled `beta-survey` and `from:web`).
 - *Live 2026-10-04:* merged with the 0.5 update (PR #18, merge commit 0309742; Pages deploy succeeded).
 
