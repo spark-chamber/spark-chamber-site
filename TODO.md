@@ -31,7 +31,7 @@ The site's copy was checked against `spark-chamber/electronics-app` at release 0
 
 ## Keep in step with the app
 
-- Version and date in every footer, the download header and the release notes (now 0.4.1, October 3, 2026). Release notes come from the app's `docs/release-notes/`.
+- Version and date in every footer, the download header and the release notes (now 0.5.0, October 4, 2026; the 0.5.0 release notes are still to add). Release notes come from the app's `docs/release-notes/`.
 - Home page facts taken from the app: 50 topics; five right in a row to light a topic; reviews after 1, 3, 7, 14 and 30 days; two misses in review lose mastery; 23 design problems; worst-case and datasheet problems in Real components. The two example cards in "Real work" are real problems from the app (`div_design_pair` and `real_worst_divider`).
 - Credits lists the only two works the app's topics cite (Kuphaldt's *Lessons in Electric Circuits* and *ModEL*). Add a row if a topic cites a new CC BY source.
 - The Privacy page mirrors the app's About page and `docs/PRIVACY.md`. If the planned design assistant (app backlog U14, the user's own LLM) ships, "makes no network requests" must change.
@@ -42,9 +42,9 @@ The site's copy was checked against `spark-chamber/electronics-app` at release 0
 - Buttons and nav links have no hover state. In the original, the inline styles overrode the `a:hover` rule, and that behavior is kept as-is.
 - Bump the "Last updated" date on `privacy.html` whenever it changes.
 
-## For 0.5: app screenshots
+## App screenshots
 
-The 0.4.1 screenshots were taken out before release: they rendered poorly, and they show the old navy look. The Filament look arrives in 0.5. Retake them then, to this spec (owner, 2026-10-03):
+*Done for 0.5 (2026-10-04):* seven shots on the home page, in `img/0.5/` as WebP (about 300 KB in all), from the 0.5 release candidate's 2x captures. Keep to this spec when replacing them (owner, 2026-10-03):
 
 - Crisp 2x captures, each cropped to one focused part of the screen, not a whole window shrunk down.
 - Shown at width 100% and height auto inside the content column. Never cropped with object-fit, and never wider than the column.
