@@ -1,6 +1,6 @@
 # Feedback receiver
 
-The form at `sparkchamber.app/feedback.html` posts here. This Cloudflare Worker checks the Turnstile spam guard, then files the report as an issue in the private `spark-chamber/spark-chamber-feedback` repository. Issues get labels by kind (`kind:wrong-answer` and so on), by source (`from:app` or `from:web`) and by topic (`topic:dividers`). It stores nothing itself, including no IP addresses.
+The form at `sparkchamber.app/feedback.html` posts here. This Cloudflare Worker checks the Turnstile spam guard, then files the report as an issue in the private `spark-chamber/spark-chamber-feedback` repository. Issues get labels by kind (`kind:wrong-answer` and so on), by source (`from:app` or `from:web`) and by topic (`topic:dividers`). The closed beta's survey (`survey.html`, a hidden field `form=survey`) goes to the same repo as one issue per survey, labeled `beta-survey` and `from:web`. It stores nothing itself, including no IP addresses.
 
 Tests: `npm test` (Node 22 or later; no install needed).
 
@@ -26,6 +26,17 @@ Tests: `npm test` (Node 22 or later; no install needed).
    The deploy prints the Worker's address, for example `https://spark-chamber-feedback.<your-subdomain>.workers.dev`.
 5. **Connect the form:** in `feedback.html`, replace `[WORKER URL]` with that address and `[TURNSTILE SITE KEY]` with the site key. Then commit.
 6. **Test:** send a report from https://sparkchamber.app/feedback.html and check that an issue appears in the feedback repo.
+
+## Updating the Worker
+
+Deploy again after any change to `src/worker.js`, either way:
+
+- From this folder: `npx wrangler deploy`.
+- Or in the dashboard: **Workers & Pages → spark-chamber-feedback → Edit code**, replace all of `worker.js` with this repo's `src/worker.js`, and click **Deploy**.
+
+Both keep the secrets (`TURNSTILE_SECRET`, `GITHUB_TOKEN`); don't enter them again. `wrangler deploy` also sets the vars from `wrangler.toml`, which hold the same values.
+
+Before the first beta survey, create the label `beta-survey` in the feedback repo (**Issues → Labels → New label**). If GitHub refuses a label, the Worker files the issue without labels rather than lose it.
 
 ## When the token expires
 

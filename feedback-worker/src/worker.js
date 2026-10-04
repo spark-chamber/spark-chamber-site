@@ -1,6 +1,6 @@
-// Receives the feedback form on sparkchamber.app and files each report as an
-// issue in the private feedback repository. Nothing else is stored: no IP
-// address, no cookies. Secrets: TURNSTILE_SECRET, GITHUB_TOKEN.
+// Receives the feedback form and the beta survey (form=survey) on
+// sparkchamber.app and files each as an issue in the private feedback
+// repository. Nothing else is stored: no IP address, no cookies. Secrets: TURNSTILE_SECRET, GITHUB_TOKEN.
 // Vars: SITE_URL, GITHUB_REPO (owner/name); optional FETCH_TIMEOUT_MS.
 
 export const KINDS = {
@@ -23,7 +23,33 @@ const DETAILS = {
   version: 'App version',
 };
 
-const LIMITS = { message: 5000, detail: 200 };
+const LIMITS = { message: 5000, detail: 200, answer: 2000 };
+
+// The closed-beta survey (form=survey): fixed choices, checked against these
+// lists, and short free-text answers. It goes to the same private repo.
+export const SURVEY_CHOICES = {
+  reach: {
+    label: 'How far did you get?',
+    options: { few: 'A few topics', ring: 'The center ring', circuits: 'Into Circuits', electronics: 'Into Electronics' },
+    required: true,
+  },
+  buy: {
+    label: 'Would you buy the full course?',
+    options: { yes: 'Yes', maybe: 'Maybe', no: 'No' },
+    required: true,
+  },
+  role: {
+    label: 'You are',
+    options: { student: 'Student', hobbyist: 'Hobbyist', engineer: 'Working engineer', other: 'Other' },
+    required: false,
+  },
+};
+export const SURVEY_TEXT = {
+  stopped: 'Where did you stop, and why?',
+  confused: 'What confused you or felt wrong?',
+  change: 'What would change your mind about buying?',
+  share: 'Would you show it to a friend or classmate? Why or why not?',
+};
 
 // How long to wait for Turnstile, and for GitHub, before giving up. Without a
 // limit, a stalled call keeps the visitor's browser loading forever; with it,
@@ -44,13 +70,14 @@ export default {
     const field = (name) => String(form.get(name) ?? '').trim();
 
     // Bots fill the hidden field; people never see it.
-    if (field('website')) return back(env, 'sent');
+    if (field('website')) return back(env, 'sent', field('form'));
+    if (field('form') === 'survey') return survey(field, env);
 
     const kind = field('kind');
     const message = field('message');
     // No email address is asked for or kept (owner, 2026-10-03); any posted
     // `email` field is ignored.
-    if (!(kind in KINDS) || !message || message.length > LIMITS.message) {
+    if (!Object.hasOwn(KINDS, kind) || !message || message.length > LIMITS.message) {
       return back(env, 'invalid');
     }
     if (!(await humanCheck(field('cf-turnstile-response'), env))) return back(env, 'check');
@@ -64,6 +91,39 @@ export default {
     return back(env, ok ? 'sent' : 'error');
   },
 };
+
+async function survey(field, env) {
+  const choices = {};
+  for (const [key, q] of Object.entries(SURVEY_CHOICES)) {
+    const value = field(key);
+    if (!value && !q.required) continue;
+    if (!Object.hasOwn(q.options, value)) return back(env, 'invalid', 'survey');
+    choices[key] = value;
+  }
+  const answers = {};
+  for (const key of Object.keys(SURVEY_TEXT)) {
+    const value = field(key);
+    if (value.length > LIMITS.answer) return back(env, 'invalid', 'survey');
+    if (value) answers[key] = value;
+  }
+  if (!(await humanCheck(field('cf-turnstile-response'), env))) return back(env, 'check', 'survey');
+  const ok = await postIssue(surveyIssueFor({ choices, answers }), env);
+  return back(env, ok ? 'sent' : 'error', 'survey');
+}
+
+export function surveyIssueFor({ choices, answers }) {
+  const option = (key) => SURVEY_CHOICES[key].options[choices[key]];
+  const title = `Beta survey: ${option('reach')} · would buy: ${option('buy')}`;
+  const rows = Object.keys(SURVEY_CHOICES)
+    .filter((key) => choices[key])
+    .map((key) => `| ${SURVEY_CHOICES[key].label} | ${option(key)} |`);
+  const lines = ['| Question | Answer |', '|---|---|', ...rows, ''];
+  for (const [key, label] of Object.entries(SURVEY_TEXT)) {
+    if (answers[key]) lines.push(`**${label}**`, '', quote(answers[key]), '');
+  }
+  lines.push('_Sent with the beta survey on sparkchamber.app._');
+  return { title, body: lines.join('\n'), labels: ['beta-survey', 'from:web'] };
+}
 
 async function humanCheck(token, env) {
   if (!token) return false;
@@ -103,7 +163,10 @@ export function issueFor({ kind, message, details }) {
 }
 
 async function fileIssue(report, env) {
-  const issue = issueFor(report);
+  return postIssue(issueFor(report), env);
+}
+
+async function postIssue(issue, env) {
   // One limit for both tries, so a retry can't double the wait.
   const signal = timeout(env);
   const post = (payload) =>
@@ -199,7 +262,8 @@ function cell(text) {
   return neutralize(text).replace(/\|/g, '\\|').replace(/\n/g, ' ');
 }
 
-function back(env, status) {
-  const page = status === 'sent' ? 'feedback-sent.html' : `feedback.html?status=${status}`;
+function back(env, status, form) {
+  const name = form === 'survey' ? 'survey' : 'feedback';
+  const page = status === 'sent' ? `${name}-sent.html` : `${name}.html?status=${status}`;
   return Response.redirect(`${env.SITE_URL}/${page}`, 303);
 }
