@@ -17,6 +17,12 @@ The site's copy was checked against `spark-chamber/electronics-app` at release 0
 - "Take the survey" links to `survey.html`, which posts to the feedback Worker as `form=survey`. *Done 2026-10-04:* the owner created the `beta-survey` label, redeployed the Worker from commit 121a081, and sent a test survey (feedback issue #5, labeled `beta-survey` and `from:web`).
 - *Live 2026-10-04:* merged with the 0.5 update (PR #18, merge commit 0309742; Pages deploy succeeded).
 
+## Release info from the app (`release.js`)
+
+- Every page loads `release.js`, which reads `https://app.sparkchamber.app/release.json` (published by the app's CI with each release; owner, 2026-10-05) and updates the footer version, the download page's eyebrow and release notes, and the home page's "What's new". It only moves forward to a newer version, writes text only, and accepts `notes_url` only on sparkchamber.app, app.sparkchamber.app or github.com/spark-chamber/.
+- The HTML keeps the current version and notes as the fallback, so update them with each reviewed release as before.
+- `dev/release.sample.json` (excluded from the site) is a sample for testing. Check CORS once the real file is live: `curl -sI https://app.sparkchamber.app/release.json | grep -i access-control` should show `*`.
+
 ## Feedback form
 
 - The form posts to the Worker at `https://spark-chamber-feedback.sparkchamber.workers.dev` (Turnstile site key `0x4AAAAAAFLqcBtSJG9R3Zq2`). The GitHub token in the Worker expires after a year; renew it as described in `feedback-worker/README.md`.

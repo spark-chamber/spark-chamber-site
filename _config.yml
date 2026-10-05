@@ -4,3 +4,4 @@ exclude:
   - TODO.md
   - STYLE.md
   - feedback-worker
+  - dev
