@@ -19,7 +19,7 @@ The site's copy was checked against `spark-chamber/electronics-app` at release 0
 
 ## Release info from the app (`release.js`)
 
-- Every page loads `release.js`, which reads `https://app.sparkchamber.app/release.json` (published by the app's CI with each release; owner, 2026-10-05) and updates the footer version, the download page's eyebrow and release notes, and the home page's "What's new". It only moves forward to a newer version, writes text only, and accepts `notes_url` only on sparkchamber.app, app.sparkchamber.app or github.com/spark-chamber/.
+- Every page loads `release.js`, which reads `https://app.sparkchamber.app/release.json` (published by the app's CI with each release; owner, 2026-10-05) and updates the footer version, the download page's eyebrow and release notes, and the home page's "What's new". It only moves forward to a newer version, writes text only, and accepts `notes_url` only on https sparkchamber.app or app.sparkchamber.app (the app repo is private).
 - The HTML keeps the current version and notes as the fallback, so update them with each reviewed release as before.
 - `dev/release.sample.json` (excluded from the site) is a sample for testing. Check CORS once the real file is live: `curl -sI https://app.sparkchamber.app/release.json | grep -i access-control` should show `*`.
 

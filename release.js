@@ -23,14 +23,13 @@
     if (!m || +m[2] < 1 || +m[2] > 12 || +m[3] < 1 || +m[3] > 31) return null;
     return MONTHS[+m[2] - 1] + ' ' + (+m[3]) + ', ' + m[1];
   }
-  // Release notes may live on the site, the browser version, or the app's
-  // GitHub organization; anything else is ignored.
+  // Release notes must be public: the site or the browser version only.
+  // (The app's repository is private, so GitHub links are ignored.)
   function safeNotesUrl(url) {
     try {
       var u = new URL(url);
       if (u.protocol !== 'https:') return null;
       if (u.hostname === 'sparkchamber.app' || u.hostname === 'app.sparkchamber.app') return u.href;
-      if (u.hostname === 'github.com' && u.pathname.indexOf('/spark-chamber/') === 0) return u.href;
     } catch (e) {}
     return null;
   }
