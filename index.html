@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://sparkchamber.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="style.css?v=0.6.2-1">
+<link rel="stylesheet" href="style.css?v=0.6.2-2">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -123,7 +123,7 @@
 <p class="text">Spark Chamber is for beginners, for students taking Circuits I or Electronics I, and for hobbyists who build things.</p>
 </div>
 <figure class="shot">
-<img src="img/0.5/path-select.webp" width="2224" height="1223" loading="lazy" decoding="async" alt="The Choose a path screen: eight path cards. Electrical engineer and Maker are open; Technician, Audio engineer, Physicist, Mathematician, Computer engineer, and RF engineer are locked.">
+<img src="img/0.6.2/path-select.webp" width="2330" height="1306" loading="lazy" decoding="async" alt="The Choose a path screen: eight path cards. Electrical engineer and Maker are open; Technician, Audio engineer, Physicist, Mathematician, Computer engineer, and RF engineer are locked, each with the subject it opens with.">
 <figcaption>Choose a path. Electrical engineer and Maker are open now; the other six open as their subjects arrive.</figcaption>
 </figure>
 <ol class="how-steps">
@@ -148,7 +148,7 @@
 </div>
 <div class="cards">
 <div class="legend-card">
-<div class="legend-title"><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="7" fill="#0D0F0E" stroke="#3A3F3B" stroke-width="1.5"/></svg><strong>Dark</strong></div>
+<div class="legend-title"><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="7" fill="#0D0F0E" stroke="#3A3F3B" stroke-width="1.5"/></svg><strong>Locked</strong></div>
 <p class="note">You haven't unlocked this topic yet, but you can see it and where the subject leads.</p>
 </div>
 <div class="legend-card">
@@ -161,7 +161,7 @@
 </div>
 <div class="legend-card">
 <div class="legend-title"><svg width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="7" fill="#E8A33D" fill-opacity="0.4" stroke="#E8A33D" stroke-width="1.5"/></svg><strong>Review due</strong></div>
-<p class="note">Lit topics come back for review after 1, 3, 7, 14, and 30 days. If you miss two reviews in a row, you have to master the topic again.</p>
+<p class="note">Lit topics come back for review after 1, 3, 7, 14, and 30 days. A missed review restarts the schedule, and two in a row mark the topic shaky. It stays lit, and one clean review steadies it.</p>
 </div>
 </div>
 <div class="shots shots-tree">
@@ -170,7 +170,7 @@
 <figcaption>The core of the Theory map: the nine topics everything else builds on, with Circuit analysis growing out of it.</figcaption>
 </figure>
 <figure class="shot">
-<img src="img/0.5/topic-needs.webp" width="1632" height="880" loading="lazy" decoding="async" alt="The Inductors topic selected on the Theory map. Its panel lists what it needs: Charge and current and Voltage and energy are lit, Ohm's law is ready, and Power and heat is not yet.">
+<img src="img/0.6.2/topic-needs.webp" width="1254" height="1293" loading="lazy" decoding="async" alt="The Inductors topic selected on the Theory map. Its panel lists what it needs: Charge and current and Voltage and energy are lit, Ohm's law is ready, and Power and heat is not yet.">
 <figcaption>Select a topic to see what it builds on, and whether each prerequisite is lit, ready, or not yet.</figcaption>
 </figure>
 </div>
@@ -191,7 +191,7 @@
 <li>Designs checked in a circuit simulator</li>
 <li>The Bench: wire a circuit, predict a reading, and measure it with a multimeter, an oscilloscope, a function generator, or a Bode plotter</li>
 <li>Hidden faults to find with the meter, on circuits from the problems or your own</li>
-<li>Circuits you can export to LTspice</li>
+<li>Any circuit's netlist, ready to copy into LTspice</li>
 <li>A design map: each location is a real circuit to design, build, and measure against its specification, and clearing one reveals the next</li>
 <li>Workshop labs that you run on the Bench, step by step</li>
 <li>Saved circuits, and blueprints you can open again from your library</li>
@@ -274,16 +274,16 @@
 <span class="chip">Particle physics</span>
 </div>
 <p class="text">Early Access covers circuits and electronics: 60 topics, from charge and current to op amps, diodes, transistors, and MOSFETs, plus reading schematics and SPICE modeling. The other subjects are planned. Each one ships only after it's written, checked, and reviewed.</p>
-<p class="text">It also has Terminology, the key terms on boards by subject, with the main ones on pages of their own, and a placement test that finds where you should start, with an “I don't know” button instead of guessing.</p>
+<p class="text">It also has Terminology, 68 key terms on boards by subject, each with a page of its own, and a placement test that finds where you should start, with an “I don't know” button instead of guessing.</p>
 
 <div class="shots shots-reading">
 <figure class="shot">
-<img src="img/0.5/schematic-reading.webp" width="1460" height="1152" loading="lazy" decoding="async" alt="A common-emitter amplifier schematic with R1, R2, RC, RE, and the bypass capacitor CE, and four possible answers to what RE is for.">
+<img src="img/0.6.2/schematic-reading.webp" width="2272" height="1395" loading="lazy" decoding="async" alt="A common-emitter amplifier schematic with R1, R2, RC, RE, the bypass capacitor CE, and coupling capacitors C1 and C2, and four possible answers to what RE is for.">
 <figcaption>Schematic-reading problems ask what each part of a real circuit does, like the emitter resistor in a common-emitter amplifier.</figcaption>
 </figure>
 <figure class="shot">
-<img src="img/0.5/calculator.webp" width="916" height="1452" loading="lazy" decoding="async" alt="The calculator worksheet: R = 10 kΩ, C = 100 nF, the cutoff fc = 159.2 Hz, τ = 1 ms, and a capacitor voltage of 3.161 V, each line typeset.">
-<figcaption>The calculator carries units and typesets each line, so an RC cutoff reads as it would on paper.</figcaption>
+<img src="img/0.6.2/calculator-complex.webp" width="912" height="1400" loading="lazy" decoding="async" alt="The calculator in Complex mode: 1.8k + 1/(j·2π·1k·100n) drawn on the complex plane tip to tail, the resistance along the real axis and the capacitor's reactance straight down, summing to 1.8k − j1.592k, or 2.403k at −41.48°.">
+<figcaption>The calculator's Complex mode draws each value on the complex plane as you type: here a 1.8 kΩ resistor and a 100 nF capacitor at 1 kHz, 2.403 kΩ at −41.48°.</figcaption>
 </figure>
 </div>
 </div>
