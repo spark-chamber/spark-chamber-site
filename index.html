@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://sparkchamber.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="style.css?v=0.5.0-1">
+<link rel="stylesheet" href="style.css?v=0.6.2-1">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -103,12 +103,13 @@
 
 <section id="new" class="band">
 <div class="container-sm stack gap-14">
-<p class="eyebrow">WHAT'S NEW · <span data-release="version">0.6.1</span> · <span data-release="date" data-upper>OCTOBER 9, 2026</span></p>
+<p class="eyebrow">WHAT'S NEW · <span data-release="version">0.6.2</span> · <span data-release="date" data-upper>OCTOBER 12, 2026</span></p>
 <ul class="list gap-6" data-release="highlights">
-<li>Practice keeps one steady layout: the circuit stays whole and in place, with Formulas on the left and the calculator on the right.</li>
-<li>The keyboard works throughout: Enter after a set, keys 1–4 in the final test, typing after the calculator closes, and Page Up and Page Down to scroll.</li>
-<li>The upright calculator is easier to type in: exponents end where you expect, operators stay in their box, and there's a new ×10ⁿ key.</li>
-<li>Loops and nodes counts nodes one per line and says what an ideal supply does.</li>
+<li>The Bench oscilloscope is now a full front panel: glowing traces, volts and time per division knobs with printed scales, AC/GND/DC switches, trigger level, mode and slope, Run/Stop, Single and Autoset.</li>
+<li>MEASURE reads Vpp, Vmax, Vavg, Vrms, frequency and the phase and lag between the two channels; CURSOR gives Δt, 1/Δt and ΔV.</li>
+<li>The scope behaves like one on a real bench: its probes load the circuit, AC coupling is a real high-pass, and a ×10 probe needs compensating.</li>
+<li>The ground clip is tied to earth, so clipping it to a node that isn't ground shorts that node, as it would on a real bench.</li>
+<li>The snap is also built for 64-bit ARM Linux.</li>
 </ul>
 <p class="fine"><a href="download.html#notes" data-release="notes-link">Full release notes</a></p>
 </div>
@@ -131,8 +132,8 @@
 <li><strong>Build it and measure it</strong><span class="note">Wire the circuit on the Bench, predict a reading, and measure it with a multimeter or an oscilloscope.</span></li>
 </ol>
 <figure class="shot">
-<img src="img/0.5/bench-probe.webp" width="2224" height="837" loading="lazy" decoding="async" alt="A 9 V source, a 1 kΩ resistor, and an LED on the Bench. The multimeter reads 1.887 V at node n2, and the panel says the prediction of 1.9 V was 0.7% high, within 5%.">
-<figcaption>On the Bench, predict a reading, run the simulation, then check your prediction against the multimeter.</figcaption>
+<img src="img/0.6.2/bench-scope.webp" width="1920" height="802" loading="lazy" decoding="async" alt="A problem's circuit on the Bench: a 1 kHz sine source driving a 1.8 kΩ resistor and a 100 nF capacitor. Beside it, the oscilloscope shows the input on CH2 at 2.004 V peak to peak and the capacitor's voltage on CH1 at 1.328 V, with CH2 leading CH1 by 48.5°.">
+<figcaption>A problem's circuit on the Bench, measured with the oscilloscope: the RC network's output is smaller than its input and lags it by 48.5°.</figcaption>
 </figure>
 <p class="note">No mascots, streak quests, or subscriptions. The challenge is the engineering itself.</p>
 </div>
@@ -165,8 +166,8 @@
 </div>
 <div class="shots shots-tree">
 <figure class="shot">
-<img src="img/0.5/theory-map.webp" width="1300" height="985" loading="lazy" decoding="async" alt="The core ring of the Theory map: Charge and current and Voltage and energy are lit, Ohm's law and Capacitors are ready, and the other core topics are dark.">
-<figcaption>The core of the Theory map: the eight topics everything else builds on.</figcaption>
+<img src="img/0.6.2/theory-map.webp" width="1720" height="845" loading="lazy" decoding="async" alt="The Theory map: the core ring with 2 of its 9 topics lit and Loops and nodes up next, the Circuit analysis branch growing out to the right, and a panel counting 2 of 54 theory topics lit.">
+<figcaption>The core of the Theory map: the nine topics everything else builds on, with Circuit analysis growing out of it.</figcaption>
 </figure>
 <figure class="shot">
 <img src="img/0.5/topic-needs.webp" width="1632" height="880" loading="lazy" decoding="async" alt="The Inductors topic selected on the Theory map. Its panel lists what it needs: Charge and current and Voltage and energy are lit, Ohm's law is ready, and Power and heat is not yet.">
@@ -177,7 +178,8 @@
 </section>
 
 <section id="work" class="band">
-<div class="container split align-start">
+<div class="container stack gap-32">
+<div class="split align-start">
 <div class="stack gap-16">
 <p class="eyebrow">03 · REAL WORK</p>
 <h2 class="title-lg">Design to a spec, with real parts</h2>
@@ -225,6 +227,15 @@
 </div>
 </div>
 </div>
+<figure class="shot">
+<img src="img/0.6.2/scope.webp" width="1780" height="1180" loading="lazy" decoding="async" alt="The Bench oscilloscope's front panel: two sine traces at 1 kHz in amber and teal, VOLTS/DIV and TIME/DIV knobs with printed scales, AC, GND and DC coupling switches, the trigger controls, and MEASURE readings of Vpp, Vmax, Vavg, Vrms, frequency, and CH2 leading CH1 by 48.5°, 134.8 µs.">
+<figcaption>The Bench oscilloscope is a real front panel: volts and time per division, coupling, trigger, and MEASURE readings down to the phase between channels.</figcaption>
+</figure>
+<figure class="shot">
+<img src="img/0.6.2/workshop.webp" width="1470" height="850" loading="lazy" decoding="async" alt="The Workshop: 21 labs in columns for DC, filters, diodes, op amps, transistors, and power, from a voltage divider to an H-bridge motor driver, all leading to the Bench, with the reading-schematics and SPICE modeling topics below.">
+<figcaption>Workshop labs: 21 circuits to build and measure on the Bench, from a voltage divider to an H-bridge motor driver.</figcaption>
+</figure>
+</div>
 </section>
 
 <section id="correct" class="band band-alt">
@@ -241,8 +252,8 @@
 <div class="check"><strong>Reviewed</strong><span class="note">Each topic is reviewed against the sources it cites.</span></div>
 </div>
 <figure class="shot">
-<img src="img/0.5/practice-feedback.webp" width="2224" height="1008" loading="lazy" decoding="async" alt="A voltage divider problem with R1 = 22 kΩ, R2 = 56 kΩ, and 24 V in. The answer 6.77 V gets the feedback that it is the voltage across R1, and that the output is Vin · R2 / (R1 + R2).">
-<figcaption>A wrong answer gets feedback on the specific mistake: here, the voltage across the wrong resistor.</figcaption>
+<img src="img/0.6.2/practice-feedback.webp" width="1728" height="968" loading="lazy" decoding="async" alt="An Ohm's law problem: a 4.5 V battery across R1 = 82 kΩ. The answer 157 A gets the feedback: About 2,900,000× too high. Resistance is volts per ampere. Rearrange it for the current.">
+<figcaption>A wrong answer gets feedback on the specific mistake: here, how far off it is, and how to rearrange Ohm's law for the current.</figcaption>
 </figure>
 <p class="note">Found a mistake anyway? Use the Report a problem button under the problem. We read every report.</p>
 </div>
@@ -286,10 +297,9 @@
 <p class="text">This is the plan as it stands. Dates are targets, and the plan may change.</p>
 </div>
 <ol class="roadmap">
-<li><strong>Next · 0.6.2</strong><span class="note">An oscilloscope front panel on the Bench: a real bench scope's controls, with probes that load the circuit. Also an arm64 snap.</span></li>
+<li><strong>Next · 0.7 · week of October 12</strong><span class="note">The Workshop redesigned: current and voltage shown live on the circuit, real instruments with probes, a breadboard view beside the schematic, the meter always in view, and a clear Run control.</span></li>
 <li><strong>Coming soon</strong><span class="note">Six more topics in circuit analysis and electronics, a Theory map whose subjects grow outward as deep as they need, and new location cards that keep your measured results.</span></li>
-<li><strong>Then · 0.7</strong><span class="note">Circuits II: AC circuits with phasors, impedance and AC power, frequency response, filters and Bode plots, and transformers.</span></li>
-<li><strong>Then · 0.8</strong><span class="note">Electronics II: differential pairs, frequency response, output stages and feedback. Also a catalog of the real parts you use, with their pinouts, their ratings, and what each rating means.</span></li>
+<li><strong>Then · 0.8</strong><span class="note">Circuits II: AC circuits with phasors, impedance and AC power, frequency response, filters and Bode plots, and transformers. Electronics II: differential pairs, frequency response, output stages and feedback. Also a catalog of the real parts you use, with their pinouts, their ratings, and what each rating means.</span></li>
 <li><strong>1.0 · early 2027</strong><span class="note">Circuit analysis and Electronics complete, each as a two-semester college sequence, on Linux, the browser, macOS, and Windows.</span></li>
 <li><strong>After 1.0</strong><span class="note">Ambient music and sound, a full history of your progress, the Design Bench's full workflow, real PCB and embedded design with export to KiCad, specializations in audio, power, RF, and embedded systems, and the other subjects shown as locked on the map.</span></li>
 </ol>
@@ -314,7 +324,7 @@
 
 <footer class="site-footer">
 <div class="footer-inner">
-<span>Spark Chamber · Early Access <span data-release="version">0.6.1</span></span>
+<span>Spark Chamber · Early Access <span data-release="version">0.6.2</span></span>
 <div class="footer-links">
 <a href="download.html">Download</a>
 <a href="privacy.html">Privacy</a>

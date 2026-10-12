@@ -515,6 +515,6 @@ h1, h2 { overflow-wrap: break-word; hyphens: auto; }
 /* Side by side from 900 px, with column widths in proportion to each image's
    aspect ratio so both images in a row end at the same height. */
 @media (min-width: 900px) {
-  .shots-tree { grid-template-columns: 1.32fr 1.855fr; }
+  .shots-tree { grid-template-columns: 2.036fr 1.855fr; }
   .shots-reading { grid-template-columns: 1.267fr 0.631fr; }
 }

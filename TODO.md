@@ -37,7 +37,7 @@ The site's copy was checked against `spark-chamber/electronics-app` at release 0
 
 ## Keep in step with the app
 
-- Version and date in every footer, the download header and the release notes (now 0.6.1, October 9, 2026). Release notes come from the app's `docs/release-notes/`.
+- Version and date in every footer, the download header and the release notes (now 0.6.2, October 12, 2026). Release notes come from the app's `docs/release-notes/`.
 - Home page facts taken from the app: 50 topics; five right in a row to light a topic; reviews after 1, 3, 7, 14 and 30 days; two misses in review lose mastery; 23 design problems; worst-case and datasheet problems in Real components. The two example cards in "Real work" are real problems from the app (`div_design_pair` and `real_worst_divider`).
 - Credits lists the only two works the app's topics cite (Kuphaldt's *Lessons in Electric Circuits* and *ModEL*). Add a row if a topic cites a new CC BY source.
 - The Privacy page mirrors the app's About page and `docs/PRIVACY.md`. If the planned design assistant (app backlog U14, the user's own LLM) ships, "makes no network requests" must change.
@@ -50,7 +50,7 @@ The site's copy was checked against `spark-chamber/electronics-app` at release 0
 
 ## App screenshots
 
-*Done for 0.5 (2026-10-04):* seven shots on the home page, in `img/0.5/` as WebP (about 300 KB in all), from the 0.5 release candidate's 2x captures. Keep to this spec when replacing them (owner, 2026-10-03):
+*Done for 0.5 (2026-10-04):* seven shots on the home page, in `img/0.5/` as WebP (about 300 KB in all), from the 0.5 release candidate's 2x captures. *Updated for 0.6.2 (2026-10-12):* five shots in `img/0.6.2/` (about 255 KB), cropped from the 1920 × 1230 Snap Store screenshots (the app repo's `docs/handoff/store-0.6.2/`): the Bench with the scope (How it works), the Theory map (The tree), the scope's front panel and the Workshop labs (Real work), and practice feedback (Correctness). Those captures are about 1.6x at the column's width, not 2x. The old `bench-probe`, `theory-map` and `practice-feedback` in `img/0.5/` are no longer used; delete them when the owner OKs it. The store banner (`banner.png`, 1920 × 640) isn't used on the site. Keep to this spec when replacing them (owner, 2026-10-03):
 
 - Crisp 2x captures, each cropped to one focused part of the screen, not a whole window shrunk down.
 - Shown at width 100% and height auto inside the content column. Never cropped with object-fit, and never wider than the column.
