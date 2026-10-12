@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://sparkchamber.app/download.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="style.css?v=0.5.0-1">
+<link rel="stylesheet" href="style.css?v=0.6.2-1">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -38,7 +38,7 @@
 <main id="main">
 
 <section class="page-intro stack gap-14">
-<p class="eyebrow">DOWNLOAD · EARLY ACCESS <span data-release="version">0.6.1</span> · <span data-release="date" data-upper>OCTOBER 9, 2026</span></p>
+<p class="eyebrow">DOWNLOAD · EARLY ACCESS <span data-release="version">0.6.2</span> · <span data-release="date" data-upper>OCTOBER 12, 2026</span></p>
 <h1 class="display-sm">Get Spark Chamber</h1>
 <p class="lead lead-wide">Spark Chamber is free during Early Access and needs no account. It saves your progress on your device, keeps automatic backups, and lets you export it to a file at any time from Settings → Export progress.</p>
 <p class="fine"><a href="beta.html">Join the beta</a> to help test 0.6 until December 6, 2026.</p>
@@ -54,7 +54,7 @@
 
 <div class="platform">
 <div class="platform-head"><h2 class="title-sm">Linux</h2><span class="platform-tag">SNAP</span></div>
-<p class="note">Spark Chamber is built and tested on Ubuntu. It installs from the Snap Store and updates automatically.</p>
+<p class="note">Spark Chamber is built and tested on Ubuntu. It installs from the Snap Store and updates automatically, on PCs and on 64-bit ARM.</p>
 <a href="https://snapcraft.io/spark-chamber" class="btn">Get it from the Snap Store</a>
 </div>
 </section>
@@ -96,6 +96,25 @@
 <section id="notes" class="band">
 <div class="container-sm stack gap-14" data-release="notes">
 <h2 class="title-md">Release notes</h2>
+<div class="panel">
+<div class="panel-head wrap mono"><span>0.6.2</span><span>October 12, 2026</span></div>
+<ul class="list gap-6">
+<li>The Bench oscilloscope is now a full front panel: glowing traces, volts and time per division knobs with printed scales, AC/GND/DC switches, trigger level, mode and slope, Run/Stop, Single and Autoset.</li>
+<li>MEASURE reads Vpp, Vmax, Vavg, Vrms, frequency and the phase and lag between the two channels; CURSOR gives Δt, 1/Δt and ΔV.</li>
+<li>The scope behaves like one on a real bench: its probes load the circuit, AC coupling is a real high-pass, and a ×10 probe needs compensating.</li>
+<li>The ground clip is tied to earth, so clipping it to a node that isn't ground shorts that node, as it would on a real bench.</li>
+<li>The snap is also built for 64-bit ARM Linux.</li>
+</ul>
+<p class="fine">A 0.6.1 save opens in 0.6.2 with nothing lost.</p>
+<p class="fine">Known limits:</p>
+<ul class="list gap-6 fine">
+<li>At some window sizes (around 1000 × 760) the Bench's instrument panel can run out of room; a larger window or EXPAND shows all of it.</li>
+<li>The Schmitt-trigger op-amp circuit's scope run stops early, at about 38.5 µs.</li>
+<li>In full screen (F11) on some Linux desktops, the screen can stop updating after you enter practice; pressing F11 twice brings it back.</li>
+<li>The arm64 snap is built from the same code as the PC one but hasn't been tried on ARM hardware yet.</li>
+<li>On a few problems, such as the RC filter's gain in decibels, the Bench opens the circuit with fixed part values instead of the problem's own, so the scope's readings there don't match the problem's answer.</li>
+</ul>
+</div>
 <div class="panel">
 <div class="panel-head wrap mono"><span>0.6.1</span><span>October 9, 2026</span></div>
 <ul class="list gap-6">
@@ -185,7 +204,7 @@
 
 <footer class="site-footer">
 <div class="footer-inner">
-<span>Spark Chamber · Early Access <span data-release="version">0.6.1</span></span>
+<span>Spark Chamber · Early Access <span data-release="version">0.6.2</span></span>
 <div class="footer-links">
 <a href="index.html">Home</a>
 <a href="privacy.html">Privacy</a>
