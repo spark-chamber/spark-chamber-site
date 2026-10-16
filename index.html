@@ -133,8 +133,8 @@
 <li><strong>Build it and measure it</strong><span class="note">Build the circuit on the Bench, on a breadboard or as a schematic, predict a reading, run it, and measure it with a multimeter or an oscilloscope.</span></li>
 </ol>
 <figure class="shot">
-<img src="img/0.6.2/bench-scope.webp" width="1920" height="802" loading="lazy" decoding="async" alt="A problem's circuit on the Bench: a 1 kHz sine source driving a 1.8 kΩ resistor and a 100 nF capacitor. Beside it, the oscilloscope shows the input on CH2 at 2.004 V peak to peak and the capacitor's voltage on CH1 at 1.328 V, with CH2 leading CH1 by 48.5°.">
-<figcaption>A problem's circuit on the Bench, measured with the oscilloscope: the RC network's output is smaller than its input and lags it by 48.5°.</figcaption>
+<img src="img/0.7.0/first-light.webp" width="2560" height="1640" loading="lazy" decoding="async" alt="First light, where a new game starts: the Bench with the schematic of a 9 V source, a 1 kΩ resistor and a red LED beside the same circuit on a breadboard, the LED's open pin marked, the multimeter below, and the objective: close the loop and light the LED, with an LED current of 5 to 10 mA.">
+<figcaption>A new game starts here, on First light's Bench: the schematic and the breadboard side by side, one gap to close, and the LED's current to predict and measure.</figcaption>
 </figure>
 <p class="note">No mascots, streak quests, or subscriptions. The challenge is the engineering itself.</p>
 </div>
@@ -167,7 +167,7 @@
 </div>
 <div class="shots shots-tree">
 <figure class="shot">
-<img src="img/0.6.2/theory-map.webp" width="1720" height="845" loading="lazy" decoding="async" alt="The Theory map: the core ring with 2 of its 9 topics lit and Loops and nodes up next, the Circuit analysis branch growing out to the right, and a panel counting 2 of 54 theory topics lit.">
+<img src="img/0.7.0/theory-map.webp" width="1720" height="845" loading="lazy" decoding="async" alt="The Theory map: the core ring with 2 of its 9 topics lit and Loops and nodes up next, the Circuit analysis branch growing out to the right, and a panel counting 2 of 54 theory topics lit and 69 terms.">
 <figcaption>The core of the Theory map: the nine topics everything else builds on, with Circuit analysis growing out of it.</figcaption>
 </figure>
 <figure class="shot">
@@ -231,13 +231,19 @@
 </div>
 </div>
 <figure class="shot">
-<img src="img/0.6.2/scope.webp" width="1780" height="1180" loading="lazy" decoding="async" alt="The Bench oscilloscope's front panel: two sine traces at 1 kHz in amber and teal, VOLTS/DIV and TIME/DIV knobs with printed scales, AC, GND and DC coupling switches, the trigger controls, and MEASURE readings of Vpp, Vmax, Vavg, Vrms, frequency, and CH2 leading CH1 by 48.5°, 134.8 µs.">
-<figcaption>The Bench oscilloscope is a real front panel: volts and time per division, coupling, trigger, and MEASURE readings down to the phase between channels.</figcaption>
+<img src="img/0.7.0/bench.webp" width="1920" height="1230" loading="lazy" decoding="async" alt="The rebuilt Bench on a problem's RC circuit: the tools on a rail down the left with their keys, the Schematic, Breadboard and Both views and the amber Run key along the top, the oscilloscope docked beside the drawing, and the multimeter, the problem and the instruments on a shelf below.">
+<figcaption>The rebuilt Workshop: the circuit fills the window, the tools sit on a rail with their keys, Run (F5) is one amber key, and the multimeter stays in view.</figcaption>
+</figure>
+<div class="shots shots-work">
+<figure class="shot">
+<img src="img/0.7.0/scope.webp" width="1780" height="1180" loading="lazy" decoding="async" alt="The Bench oscilloscope's front panel with live traces: two noisy, 8-bit-quantized sine traces at 1 kHz in amber and teal, the VOLTS/DIV and TIME/DIV knobs, the coupling switches and trigger controls, and MEASURE readings of Vpp, Vmax, Vavg, Vrms, frequency, and CH2 leading CH1 by 48.5°, 134.8 µs.">
+<figcaption>The scope is live: every sweep is a fresh 8-bit capture with realistic noise, and MEASURE reads it down to the phase between channels.</figcaption>
 </figure>
 <figure class="shot">
 <img src="img/0.6.2/workshop.webp" width="1470" height="850" loading="lazy" decoding="async" alt="The Workshop: 21 labs in columns for DC, filters, diodes, op amps, transistors, and power, from a voltage divider to an H-bridge motor driver, all leading to the Bench, with the reading-schematics and SPICE modeling topics below.">
 <figcaption>Workshop labs: 21 circuits to build and measure on the Bench, from a voltage divider to an H-bridge motor driver.</figcaption>
 </figure>
+</div>
 </div>
 </section>
 
@@ -255,7 +261,7 @@
 <div class="check"><strong>Reviewed</strong><span class="note">Each topic is reviewed against the sources it cites.</span></div>
 </div>
 <figure class="shot">
-<img src="img/0.6.2/practice-feedback.webp" width="1728" height="968" loading="lazy" decoding="async" alt="An Ohm's law problem: a 4.5 V battery across R1 = 82 kΩ. The answer 157 A gets the feedback: About 2,900,000× too high. Resistance is volts per ampere. Rearrange it for the current.">
+<img src="img/0.7.0/practice-feedback.webp" width="1728" height="980" loading="lazy" decoding="async" alt="An Ohm's law problem: find the current through R1, a 4.5 V battery across 82 kΩ. The answer 157 A gets the feedback: About 2,900,000× too high. Resistance is volts per ampere. Rearrange it for the current.">
 <figcaption>A wrong answer gets feedback on the specific mistake: here, how far off it is, and how to rearrange Ohm's law for the current.</figcaption>
 </figure>
 <p class="note">Found a mistake anyway? Use the Report a problem button under the problem. We read every report.</p>
@@ -281,11 +287,11 @@
 
 <div class="shots shots-reading">
 <figure class="shot">
-<img src="img/0.6.2/schematic-reading.webp" width="2272" height="1395" loading="lazy" decoding="async" alt="A common-emitter amplifier schematic with R1, R2, RC, RE, the bypass capacitor CE, and coupling capacitors C1 and C2, and four possible answers to what RE is for.">
+<img src="img/0.7.0/schematic-reading.webp" width="2272" height="1556" loading="lazy" decoding="async" alt="A common-emitter amplifier schematic with R1, R2, RC, RE, the bypass capacitor CE, and coupling capacitors C1 and C2, the question of what RE is for above it, and four possible answers below.">
 <figcaption>Schematic-reading problems ask what each part of a real circuit does, like the emitter resistor in a common-emitter amplifier.</figcaption>
 </figure>
 <figure class="shot">
-<img src="img/0.6.2/calculator-complex.webp" width="912" height="1400" loading="lazy" decoding="async" alt="The calculator in Complex mode: 1.8k + 1/(j·2π·1k·100n) drawn on the complex plane tip to tail, the resistance along the real axis and the capacitor's reactance straight down, summing to 1.8k − j1.592k, or 2.403k at −41.48°.">
+<img src="img/0.7.0/calculator-complex.webp" width="912" height="1360" loading="lazy" decoding="async" alt="The calculator in Complex mode, laid out like an instrument: 1.8k + 1/(j·2π·1k·100n) typeset upright, drawn tip to tail on the complex plane, summing to 1.8k − j1.592k, or 2.403k at −41.48°.">
 <figcaption>The calculator's Complex mode draws each value on the complex plane as you type: here a 1.8 kΩ resistor and a 100 nF capacitor at 1 kHz, 2.403 kΩ at −41.48°.</figcaption>
 </figure>
 </div>
