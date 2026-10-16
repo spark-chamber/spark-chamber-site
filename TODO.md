@@ -37,7 +37,7 @@ The site's copy was checked against `spark-chamber/electronics-app` at release 0
 
 ## Keep in step with the app
 
-- Version and date in every footer, the download header and the release notes (now 0.6.2, October 12, 2026). Release notes come from the app's `docs/release-notes/`.
+- Version and date in every footer, the download header and the release notes (now 0.7.0, October 16, 2026). Release notes come from the app's `docs/release-notes/`.
 - Home page facts taken from the app: 50 topics; five right in a row to light a topic; reviews after 1, 3, 7, 14 and 30 days; two misses in review lose mastery; 23 design problems; worst-case and datasheet problems in Real components. The two example cards in "Real work" are real problems from the app (`div_design_pair` and `real_worst_divider`).
 - Credits lists the only two works the app's topics cite (Kuphaldt's *Lessons in Electric Circuits* and *ModEL*). Add a row if a topic cites a new CC BY source.
 - The Privacy page mirrors the app's About page and `docs/PRIVACY.md`. If the planned design assistant (app backlog U14, the user's own LLM) ships, "makes no network requests" must change.
@@ -50,7 +50,7 @@ The site's copy was checked against `spark-chamber/electronics-app` at release 0
 
 ## App screenshots
 
-*Done for 0.5 (2026-10-04):* seven shots on the home page, in `img/0.5/` as WebP (about 300 KB in all), from the 0.5 release candidate's 2x captures. *Updated for 0.6.2 (2026-10-12):* all nine shots are in `img/0.6.2/` (about 450 KB). Five are cropped from the 1920 × 1230 Snap Store screenshots (the app repo's `docs/handoff/store-0.6.2/`), at about 1.6x at the column's width: the Bench with the scope, the Theory map, the scope's front panel, the Workshop labs, and practice feedback. Four are 2x captures of the v0.6.2 Linux build, taken the way the app's `tool/store_screenshots.sh` takes the store shots (dark, the 1280 × 820 window at GDK_SCALE=2): Choose a path, Inductors' needs on the Theory map, the emitter-resistor schematic-reading problem (template purp_emitter_resistor, seed 1), and the calculator's Complex mode with `1.8k + 1/(j*2*pi*1k*100n)` (owner, 2026-10-12: "can you have it showing the complex calculator mode for the calculator pic?"). Nothing uses `img/0.5/` any more; delete it when the owner OKs it. The store banner isn't used on the site.
+*Done for 0.5 (2026-10-04):* seven shots on the home page, in `img/0.5/` as WebP (about 300 KB in all), from the 0.5 release candidate's 2x captures. *Updated for 0.7.0 (2026-10-16):* the scope, the Bench, practice feedback and the Theory map are cropped from the 0.7.0 Snap Store screenshots (the app repo's `linux/packaging/screenshots/` on main, 1920 × 1230, about 1.6x at the column's width). First light, schematic reading and the calculator's Complex mode are 2x captures of the v0.7.0 Linux build (dark, the 1280 × 820 window at GDK_SCALE=2), in `img/0.7.0/`. Choose a path, Inductors' needs and the Workshop labs didn't change in 0.7 and stay in `img/0.6.2/`. `img/0.5/` was deleted on 2026-10-16 (owner: "Whatever you recommend"). The store banner isn't used on the site.
 
 - Crisp 2x captures, each cropped to one focused part of the screen, not a whole window shrunk down.
 - Shown at width 100% and height auto inside the content column. Never cropped with object-fit, and never wider than the column.

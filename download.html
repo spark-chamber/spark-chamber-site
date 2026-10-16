@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://sparkchamber.app/download.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="style.css?v=0.6.2-2">
+<link rel="stylesheet" href="style.css?v=0.7.0-1">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -38,10 +38,10 @@
 <main id="main">
 
 <section class="page-intro stack gap-14">
-<p class="eyebrow">DOWNLOAD · EARLY ACCESS <span data-release="version">0.6.2</span> · <span data-release="date" data-upper>OCTOBER 12, 2026</span></p>
+<p class="eyebrow">DOWNLOAD · EARLY ACCESS <span data-release="version">0.7.0</span> · <span data-release="date" data-upper>OCTOBER 16, 2026</span></p>
 <h1 class="display-sm">Get Spark Chamber</h1>
 <p class="lead lead-wide">Spark Chamber is free during Early Access and needs no account. It saves your progress on your device and lets you export it to a file at any time from Settings → Export progress. The Linux app also keeps automatic backups.</p>
-<p class="fine"><a href="beta.html">Join the beta</a> to help test 0.6 until December 6, 2026.</p>
+<p class="fine"><a href="beta.html">Join the beta</a> to help test 0.7 until December 6, 2026.</p>
 </section>
 
 <section aria-label="Platforms" class="platforms">
@@ -96,6 +96,30 @@
 <section id="notes" class="band">
 <div class="container-sm stack gap-14" data-release="notes">
 <h2 class="title-md">Release notes</h2>
+<div class="panel">
+<div class="panel-head wrap mono"><span>0.7.0</span><span>October 16, 2026</span></div>
+<ul class="list gap-6">
+<li>The Workshop is rebuilt: the circuit fills the window, tools sit on a rail with their keys, Run (F5) is one amber key, and the multimeter stays in view.</li>
+<li>Build on a clear 830-point breadboard: put each lead in a hole, run jumpers, and the schematic redraws from what you built.</li>
+<li>A new game starts on First light's Bench: predict the LED's current, close the loop, measure it, and see the map when the design clears.</li>
+<li>The oscilloscope trace is live: every sweep is a fresh 8-bit capture with realistic noise.</li>
+<li>The calculator is laid out like the scope, and its Complex line and Matrix cells type upright.</li>
+<li>The Theory map has a low drone and a swell when a topic lights, with Music and Effects volume and Mute in Settings.</li>
+</ul>
+<p class="fine">A 0.6.2 save opens in 0.7.0 with nothing lost. Once 0.7.0 has written a save, 0.6.2 and earlier leave it alone.</p>
+<p class="fine">Known limits:</p>
+<ul class="list gap-6 fine">
+<li>Wiring the Bench needs a window at least about 900 px wide. In a narrower one a new game goes straight to choosing a study path.</li>
+<li>At about 900 × 700 the cleared report is tall enough to cover part of the drawing; it scrolls.</li>
+<li>A design's spec panel fills in its readings after Run, before you have taken them with the meter. A later 0.7 update will ask for your own reading.</li>
+<li>41 problem types have no Bench for now: their drawings do not yet carry the values the problems state.</li>
+<li>The Schmitt-trigger problem whose op amp is drawn with only its supply rails stops its scope run early, at about 38.5 µs.</li>
+<li>In full screen (F11) on some Linux desktops, the screen can stop updating after you enter practice; pressing F11 twice brings it back.</li>
+<li>Sound has not been tried in Safari.</li>
+<li>The arm64 snap is built from the same code as the PC one but hasn't been tried on ARM hardware yet.</li>
+<li>There is no macOS version yet.</li>
+</ul>
+</div>
 <div class="panel">
 <div class="panel-head wrap mono"><span>0.6.2</span><span>October 12, 2026</span></div>
 <ul class="list gap-6">
@@ -204,7 +228,7 @@
 
 <footer class="site-footer">
 <div class="footer-inner">
-<span>Spark Chamber · Early Access <span data-release="version">0.6.2</span></span>
+<span>Spark Chamber · Early Access <span data-release="version">0.7.0</span></span>
 <div class="footer-links">
 <a href="index.html">Home</a>
 <a href="privacy.html">Privacy</a>
