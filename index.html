@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://sparkchamber.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="style.css?v=0.7.0-1">
+<link rel="stylesheet" href="style.css?v=0.7.2-1">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -103,14 +103,14 @@
 
 <section id="new" class="band">
 <div class="container-sm stack gap-14">
-<p class="eyebrow">WHAT'S NEW · <span data-release="version">0.7.0</span> · <span data-release="date" data-upper>OCTOBER 16, 2026</span></p>
+<p class="eyebrow">WHAT'S NEW · <span data-release="version">0.7.2</span> · <span data-release="date" data-upper>OCTOBER 21, 2026</span></p>
 <ul class="list gap-6" data-release="highlights">
-<li>The Workshop is rebuilt: the circuit fills the window, tools sit on a rail with their keys, Run (F5) is one amber key, and the multimeter stays in view.</li>
-<li>Build on a clear 830-point breadboard: put each lead in a hole, run jumpers, and the schematic redraws from what you built.</li>
-<li>A new game starts on First light's Bench: predict the LED's current, close the loop, measure it, and see the map when the design clears.</li>
-<li>The oscilloscope trace is live: every sweep is a fresh 8-bit capture with realistic noise.</li>
-<li>The calculator is laid out like the scope, and its Complex line and Matrix cells type upright.</li>
-<li>The Theory map has a low drone and a swell when a topic lights, with Music and Effects volume and Mute in Settings.</li>
+<li>Settings opens from anywhere with Ctrl+comma or the gear. On the Bench it opens beside the drawing, so the scope stays in view and keeps running.</li>
+<li>A bigger docked scope: SMALL, HALF and FULL in its header, and on a wide window it takes half the window.</li>
+<li>No ghost traces: changing a setting or the signal clears the old trace at once, as on a real digital scope.</li>
+<li>A steadier sound for laptop speakers: choose Speakers or Headphones under Listening on in Settings.</li>
+<li>The simulator picks its own time steps, and its readings are checked against ngspice, an independent simulator, on over 200 circuits.</li>
+<li>Corrected readings for the buck converter, the rectifier ripple and the Schmitt trigger, and the breadboard refuses a dead short.</li>
 </ul>
 <p class="fine"><a href="download.html#notes" data-release="notes-link">Full release notes</a></p>
 </div>
@@ -257,7 +257,7 @@
 <div class="cards">
 <div class="check"><strong>Computed</strong><span class="note">Answers come from formulas. None are typed in by hand.</span></div>
 <div class="check"><strong>Tested</strong><span class="note">Each problem type has a test against an answer worked out by hand.</span></div>
-<div class="check"><strong>Cross-checked</strong><span class="note">The built-in simulator solves some circuit problems a second way, as an independent check.</span></div>
+<div class="check"><strong>Cross-checked</strong><span class="note">The built-in simulator solves some circuit problems a second way, and its readings are checked against ngspice, an independent simulator, on over 200 circuits.</span></div>
 <div class="check"><strong>Reviewed</strong><span class="note">Each topic is reviewed against the sources it cites.</span></div>
 </div>
 <figure class="shot">
@@ -306,7 +306,7 @@
 <p class="text">This is the plan as it stands. Dates are targets, and the plan may change.</p>
 </div>
 <ol class="roadmap">
-<li><strong>Next · 0.7.x</strong><span class="note">A more responsive app, the scope's readouts holding still and updating at a real scope's pace, and the docked scope at half the window.</span></li>
+<li><strong>Next · 0.7.3</strong><span class="note">Faster scope captures, with a Settling or Acquiring readout while the scope works; keyboard keys for the scope's channels; calculator fixes; and the last few readings that differ from ngspice fixed.</span></li>
 <li><strong>Coming soon</strong><span class="note">Six more topics in circuit analysis and electronics, a Theory map whose subjects grow outward as deep as they need, and new location cards that keep your measured results.</span></li>
 <li><strong>Then · 0.8</strong><span class="note">Circuits II: AC circuits with phasors, impedance and AC power, frequency response, filters and Bode plots, and transformers. Electronics II: differential pairs, frequency response, output stages and feedback. Also a catalog of the real parts you use, with their pinouts, their ratings, and what each rating means.</span></li>
 <li><strong>1.0 · early 2027</strong><span class="note">Circuit analysis and Electronics complete, each as a two-semester college sequence, on Linux, the browser, macOS, and Windows.</span></li>
@@ -333,7 +333,7 @@
 
 <footer class="site-footer">
 <div class="footer-inner">
-<span>Spark Chamber · Early Access <span data-release="version">0.7.0</span></span>
+<span>Spark Chamber · Early Access <span data-release="version">0.7.2</span></span>
 <div class="footer-links">
 <a href="download.html">Download</a>
 <a href="privacy.html">Privacy</a>

@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://sparkchamber.app/download.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap">
-<link rel="stylesheet" href="style.css?v=0.7.0-1">
+<link rel="stylesheet" href="style.css?v=0.7.2-1">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -38,7 +38,7 @@
 <main id="main">
 
 <section class="page-intro stack gap-14">
-<p class="eyebrow">DOWNLOAD · EARLY ACCESS <span data-release="version">0.7.0</span> · <span data-release="date" data-upper>OCTOBER 16, 2026</span></p>
+<p class="eyebrow">DOWNLOAD · EARLY ACCESS <span data-release="version">0.7.2</span> · <span data-release="date" data-upper>OCTOBER 21, 2026</span></p>
 <h1 class="display-sm">Get Spark Chamber</h1>
 <p class="lead lead-wide">Spark Chamber is free during Early Access and needs no account. It saves your progress on your device and lets you export it to a file at any time from Settings → Export progress. The Linux app also keeps automatic backups.</p>
 <p class="fine"><a href="beta.html">Join the beta</a> to help test 0.7 until December 6, 2026.</p>
@@ -96,6 +96,38 @@
 <section id="notes" class="band">
 <div class="container-sm stack gap-14" data-release="notes">
 <h2 class="title-md">Release notes</h2>
+<div class="panel">
+<div class="panel-head wrap mono"><span>0.7.2</span><span>October 21, 2026</span></div>
+<ul class="list gap-6">
+<li>The scope leaves no ghost, catches a comparator's fast switching, keeps running after Autoset, and its readings hold their digits still and update three times as often.</li>
+<li>Settings opens from anywhere with Ctrl+comma or the gear and puts you back where you were. Listening on: Speakers or Headphones; the ambience plays quieter.</li>
+<li>On a big window the docked scope takes half the window and scrolling no longer turns its knobs; on a touchpad, pinch zooms and two fingers pan the Bench.</li>
+<li>Simulations are exact at any time step, no longer ring where a diode cuts off a coil's current, and read rectifier ripple right.</li>
+<li>Circuits started from rest always run, Copy for LTspice copies the same circuit, and the breadboard refuses a dead short.</li>
+<li>Every analysis is checked against ngspice, an independent circuit simulator.</li>
+</ul>
+<p class="fine">A 0.7.1 save opens in 0.7.2 with nothing lost, set to Listening on: Speakers; choose Headphones in Settings for the drone as it was.</p>
+<p class="fine">Known limits:</p>
+<ul class="list gap-6 fine">
+<li>On Linux the app draws at most 60 frames a second, even on a faster screen: the toolkit's Linux version caps it. The browser version follows the screen's rate in Chrome and Firefox.</li>
+<li>Sound has not been tried in Safari.</li>
+<li>The arm64 snap is built from the same code as the PC one but hasn't been tried on ARM hardware yet.</li>
+<li>Autoset and the scope's capture are slower on circuits that mix a slow and a fast signal: the buck converter's Autoset, and then its first trace, each take about 2.4 times as long as in 0.7.1, with no progress shown while they run.</li>
+<li>Three simulator readings are still a little off against ngspice or the exact answer: the flyback preset's drain ring, and two slow-pulse lab readings in their fourth digit. They are fixed first in 0.7.3.</li>
+<li>Two rarer circuits, in no preset or lab, are known to go wrong: a capacitor of a few farads between two 10 MΩ resistors reads about 1 % off, and a circuit whose capacitor starts charged to 5 V across a diode can stop with "did not converge". Both are fixed in 0.7.3.</li>
+</ul>
+</div>
+<div class="panel">
+<div class="panel-head wrap mono"><span>0.7.1</span><span>October 18, 2026</span></div>
+<ul class="list gap-6">
+<li>The scope, the Bench, the calculator and every panel answer a click or key at once, even with the scope running.</li>
+<li>The scope's trace is smooth instead of stair-stepped, and its readouts hold still instead of resizing as values change.</li>
+<li>A scope prediction is judged only against what the screen shows: a clipped trace first asks you to turn VOLTS/DIV up or press AUTOSET.</li>
+<li>The calculator has four display looks to choose from in Settings, and its glass no longer has a glare.</li>
+<li>The low drone now plays across the app, the Workshop and the circuit simulator have an ambience of their own, and the music can keep playing while the window is minimized.</li>
+</ul>
+<p class="fine">A 0.7.0 save opens in 0.7.1 with nothing lost.</p>
+</div>
 <div class="panel">
 <div class="panel-head wrap mono"><span>0.7.0</span><span>October 16, 2026</span></div>
 <ul class="list gap-6">
@@ -228,7 +260,7 @@
 
 <footer class="site-footer">
 <div class="footer-inner">
-<span>Spark Chamber · Early Access <span data-release="version">0.7.0</span></span>
+<span>Spark Chamber · Early Access <span data-release="version">0.7.2</span></span>
 <div class="footer-links">
 <a href="index.html">Home</a>
 <a href="privacy.html">Privacy</a>
